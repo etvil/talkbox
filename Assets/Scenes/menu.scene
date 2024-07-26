@@ -1,0 +1,52 @@
+{
+  "__guid": "a1408ff4-ea02-4287-b716-5839b7e501a7",
+  "GameObjects": [
+    {
+      "__guid": "1fea1360-3d33-4f05-a902-85888a251413",
+      "Flags": 0,
+      "Name": "MainMenu",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "86e98b4a-6cf7-4451-bb47-be9c3fd8d4d1",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenu",
+          "__guid": "7949362c-025d-41a4-99f3-2032be7c5c9b",
+          "DiscordUrl": "https://discord.gg/fhMzeJaR"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "untitled",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

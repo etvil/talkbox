@@ -1,0 +1,154 @@
+{
+  "RootObject": {
+    "__guid": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+    "Flags": 0,
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "a59469b2-8735-4148-a98a-a5d836af7150",
+        "AnimationGraph": "models/citizen/citizen.vanmgrph",
+        "BodyGroups": 341,
+        "CreateBoneObjects": false,
+        "Model": "models/citizen/citizen.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
+      },
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "d39f228d-d532-489b-831c-44caac49527e",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 71.68,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+        "__guid": "dc384dba-af86-4268-9b11-8ea28bf3cf9b",
+        "BodyWeight": 1,
+        "EyeSource": {
+          "_type": "gameobject",
+          "go": "ad3824ac-9a8e-4cf1-97fd-522779251b85"
+        },
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "Height": 1,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "component_id": "a59469b2-8735-4148-a98a-a5d836af7150",
+          "go": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "Sandbox.Voice",
+        "__guid": "3943aff9-18c0-4486-886d-a37d291687d8",
+        "Loopback": false,
+        "Mode": "PushToTalk",
+        "MorphScale": 3,
+        "MorphSmoothTime": 0.1,
+        "PushToTalkInput": "voice",
+        "Volume": 1,
+        "WorldspacePlayback": true
+      },
+      {
+        "__type": "PlayerController",
+        "__guid": "17785280-b9e1-4e1b-a59e-800aea453045",
+        "AnimationHelper": {
+          "_type": "component",
+          "component_id": "dc384dba-af86-4268-9b11-8ea28bf3cf9b",
+          "go": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "BodyRenderer": {
+          "_type": "component",
+          "component_id": "a59469b2-8735-4148-a98a-a5d836af7150",
+          "go": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "CharacterController": {
+          "_type": "component",
+          "component_id": "d39f228d-d532-489b-831c-44caac49527e",
+          "go": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+          "component_type": "CharacterController"
+        },
+        "CrouchMoveSpeed": 64,
+        "RunMoveSpeed": 190,
+        "SprintMoveSpeed": 320,
+        "WalkMoveSpeed": 190
+      },
+      {
+        "__type": "PlayerFootsteps",
+        "__guid": "6ccec75a-c342-4ad1-b9bd-580e264a1de0",
+        "Source": {
+          "_type": "component",
+          "component_id": "a59469b2-8735-4148-a98a-a5d836af7150",
+          "go": "36cffefe-336a-4e99-ba82-677bd80e5f99",
+          "component_type": "SkinnedModelRenderer"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "dee37cf1-73d3-46b3-a8ec-325ed936be01",
+        "Flags": 0,
+        "Name": "NameTag",
+        "Position": "0,0,85.97751",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "d172a6e5-35b8-422c-a21f-a89220ce9c0c",
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "PanelSize": "1150.296,183.2986",
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "NameTag",
+            "__guid": "987d7e4b-80c7-4970-bf68-86859b0ce262"
+          }
+        ]
+      },
+      {
+        "__guid": "ad3824ac-9a8e-4cf1-97fd-522779251b85",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,63.59933",
+        "Enabled": true
+      },
+      {
+        "__guid": "97b16e6c-df09-4034-b8cf-73437c012890",
+        "Flags": 0,
+        "Name": "Collider",
+        "Position": "0,0,41.28162",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "PlayerPusher",
+            "__guid": "103ebe1f-18a6-4ace-8c56-f15e180c2f84",
+            "Radius": 17.999973
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

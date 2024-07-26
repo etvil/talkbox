@@ -1,0 +1,36 @@
+MainMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444;
+	font-family: Popins;
+	font-size: 32px;
+	color: white;
+	font-weight: bold;
+	pointer-events: all;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.size {
+		width: 64px;
+		height: 64px;
+	}
+
+	> button {
+		margin-top: 24px;
+		transition: all 1s ease-in-out;
+		border-radius: 16px;
+		border-width: 8px;
+		border-color: black;
+		background-color: white;
+		cursor: pointer;
+	}
+
+	> button:hover {
+		background-color: rgb(128, 128, 128);
+		border-color: rgb(100, 100, 100);
+	}
+}

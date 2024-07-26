@@ -1,0 +1,26 @@
+{
+  "clampu": false,
+  "clampv": false,
+  "clampw": false,
+  "nolod": false,
+  "nomip": false,
+  "nocompress": true,
+  "brightness": 1,
+  "publish": {
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "discordicon",
+      "Type": "asset",
+      "Org": "etvil",
+      "Ident": "discord",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "ui/discord.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@inherits PanelComponent
+
+<root>
+    <h1>Hello everyone who came here, exit the game and right click on it and then click on map selection)</h1>
+    <button onclick="@LinkToClipboard"><img class="size" src="https://cdn.sbox.game/asset/etvil.discord/thumb.png.3670f74af084b5c8"/></button>
+    <button onclick="@(() => Game.Close() )" style="color: red; margin: 8px;">EXIT</button>
+</root>
+
+@code
+{
+    [Property]
+    private string DiscordUrl = "https://discord.gg/fhMzeJaR";
+
+    private string ident = "etvil.discord";
+
+    protected override int BuildHash() => System.HashCode.Combine("Hello everyone who came here, exit the game and right click on it and then click on map selection)");
+
+    private async void DownloadIcon()
+    {
+        var package = await Package.FetchAsync(ident, false);
+        await package.MountAsync();
+    }
+
+    protected override void OnAwake()
+    {
+        DownloadIcon();
+    }
+
+    private void LinkToClipboard()
+    {
+        Clipboard.SetText(DiscordUrl);
+        Log.Error("Fake Error: Done, Check clipboard!");
+    }
+}
