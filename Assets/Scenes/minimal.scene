@@ -264,7 +264,7 @@
             }
           ],
           "Mode": "Additive",
-          "Strength": 0.5,
+          "Strength": 0.38,
           "Threshold": 0.5,
           "ThresholdWidth": 0.5
         },
@@ -289,7 +289,7 @@
     },
     {
       "__guid": "44f2e395-ea5a-42a6-b031-960f876e3bc0",
-      "Flags": 32,
+      "Flags": 0,
       "Name": "Map",
       "Enabled": true,
       "Components": [
@@ -302,7 +302,8 @@
           "NoOrigin": false,
           "UseMapFromLaunch": true
         }
-      ]
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {

@@ -1,5 +1,6 @@
 using badandbest.Sprays;
 using Sandbox.Citizen;
+using Sandbox.Services;
 
 [Group( "Walker" )]
 [Title( "Walker - Player Controller" )]
@@ -10,6 +11,7 @@ public sealed class PlayerController : Component, Component.INetworkSpawn
 	[Property] public float WalkMoveSpeed { get; set; } = 190.0f;
 	[Property] public float RunMoveSpeed { get; set; } = 190.0f;
 	[Property] public float SprintMoveSpeed { get; set; } = 320.0f;
+
 	[Property]
 	public SkinnedModelRenderer BodyRenderer { get; set; }
 
@@ -21,6 +23,10 @@ public sealed class PlayerController : Component, Component.INetworkSpawn
 
 	public bool WishCrouch;
 	public float EyeHeight = 64;
+	private int hours;
+	private int minutes;
+	private int seconds;
+	private RealTimeUntil timeDelay;
 
 	public void OnNetworkSpawn( Connection owner )
 	{
@@ -34,10 +40,33 @@ public sealed class PlayerController : Component, Component.INetworkSpawn
 		if ( !IsProxy )
 		{
 			MouseInput();
+			UpdateTime();
 			Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 );
 		}
 
 		UpdateAnimation();
+	}
+
+	private void UpdateTime()
+	{
+		if ( timeDelay )
+		{
+			timeDelay = 1f;
+
+			seconds++;
+			if ( seconds == 60 )
+			{
+				seconds = 0;
+				minutes++;
+			}
+			if ( minutes == 60 )
+			{
+				minutes = 0;
+				hours++;
+			}
+
+			Stats.Increment( "totaltime", 1f );
+		}
 	}
 
 	protected override void OnFixedUpdate()
